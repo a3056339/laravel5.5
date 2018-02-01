@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'url'             => env('APP_URL', 'http://www.xkdapi.com'),
+    'url'             => env('APP_URL', ''),
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
