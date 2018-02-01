@@ -1,0 +1,53 @@
+{
+  "key": "sms_code",
+  "title": "验证码查询",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/sms_code",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "手机号码",
+        "key": "phone"
+      },
+      {
+        "title": "验证码",
+        "key": "code"
+      },
+      {
+        "title": "Ip",
+        "key": "ip"
+      },
+      {
+        "title": "生成时间",
+        "key": "create_at",
+        "type":"datetime"
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/sms_code_del"
+        }
+      }
+    ],
+    "filter":[
+      {
+        "input":{
+          "title":"电话号码",
+          "name":"phone"
+        }
+      }
+    ]
+  }
+}

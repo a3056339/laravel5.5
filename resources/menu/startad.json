@@ -1,0 +1,135 @@
+{
+  "key": "startad",
+  "title": "开机广告",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/ads",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "展示图",
+        "key": "path",
+        "type": "image"
+      },
+      {
+        "title": "URl",
+        "key": "url"
+      },
+      {
+        "title": "状态",
+        "key": "status",
+        "type": "select",
+        "select": "{\"0\":\"无效\",\"1\":\"有效\"}"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/ads_save",
+          "cols": [
+            {
+              "upload": {
+                "title": "展示图",
+                "name": "path",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "URL",
+                "name": "url",
+                "required":true
+              }
+            },
+            {
+              "select": {
+                "title": "状态",
+                "name": "status",
+                "default": "1",
+                "value": [
+                  {
+                    "title": "有效",
+                    "value": "1"
+                  },
+                  {
+                    "title": "无效",
+                    "value": "0"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/ads_save",
+          "cols": [
+            {
+              "upload": {
+                "title": "展示图",
+                "name": "path",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "URL",
+                "name": "url",
+                "required":true
+              }
+            },
+            {
+              "select": {
+                "title": "状态",
+                "name": "status",
+                "default": "1",
+                "value": [
+                  {
+                    "title": "有效",
+                    "value": "1"
+                  },
+                  {
+                    "title": "无效",
+                    "value": "0"
+                  }
+                ]
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/ads_del"
+        }
+      }
+    ]
+  }
+}

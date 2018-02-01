@@ -1,0 +1,219 @@
+{
+  "key": "student",
+  "title": "用户管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/student",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "UID",
+        "key": "uid"
+      },
+      {
+        "title": "昵称",
+        "key": "name"
+      },
+      {
+        "title": "头像",
+        "key": "avatar",
+        "type": "image"
+      },
+      {
+        "title": "手机号码",
+        "key": "phone"
+      },
+      {
+        "title": "地区",
+        "key": "abode"
+      },
+      {
+        "title": "出生年月",
+        "key": "birthday",
+        "type":"date"
+      },
+      {
+        "title": "状态",
+        "key": "status",
+        "type": "select",
+        "select": "{\"-1\":\"禁用\",\"0\":\"启用\"}"
+      },
+      {
+        "title": "注册时间",
+        "key": "create_at",
+        "type":"datetime"
+      },
+      {
+        "title": "登录时间",
+        "key": "login_at",
+        "type":"datetime"
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/student_save",
+          "cols": [
+            {
+              "input": {
+                "title": "姓名",
+                "name": "name",
+                "required":true
+              }
+            },
+            {
+              "upload": {
+                "title": "头像",
+                "name": "avatar",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "手机号码",
+                "name": "phone",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "地区",
+                "name": "abode"
+              }
+            },
+            {
+              "date": {
+                "title": "出生年月",
+                "name": "birthday",
+                "required":true
+              }
+            },
+            {
+              "radio": {
+                "title": "状态",
+                "name": "status",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "有效",
+                    "value": "0"
+                  },
+                  {
+                    "title": "无效",
+                    "value": "-1"
+                  }
+                ]
+              }
+            },
+            {
+              "radio": {
+                "title": "会员",
+                "name": "is_vip",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "不是",
+                    "value": "0"
+                  },
+                  {
+                    "title": "是",
+                    "value": "1"
+                  }
+                ]
+              }
+            },
+            {
+              "datetime": {
+                "title": "会员开始时间",
+                "name": "member_start_at"
+              }
+            },
+            {
+              "date": {
+                "title": "会员结束时间",
+                "name": "member_end_at"
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "filter":[
+      {
+        "input":{
+          "title":"UID",
+          "name":"uid"
+        }
+      },{
+        "select":{
+          "title":"状态",
+          "name":"status",
+          "default": "all",
+          "value": [
+            {
+              "title": "--选择--",
+              "value": "all"
+            },
+            {
+              "title": "有效",
+              "value": "0"
+            },
+            {
+              "title": "无效",
+              "value": "-1"
+            }
+          ]
+        }
+
+      }
+    ,{
+        "select":{
+          "title":"会员",
+          "name":"is_vip",
+          "default": "all",
+          "value": [
+            {
+              "title": "--选择--",
+              "value": "all"
+            },
+            {
+              "title": "是",
+              "value": "1"
+            },
+            {
+              "title": "不是",
+              "value": "0"
+            }
+          ]
+        }
+
+      },{
+        "rangedate":{
+          "title":"注册日期",
+          "name":"created"
+        }
+      },{
+        "rangedate":{
+          "title":"登录日期",
+          "name":"logind"
+        }
+      }
+    ]
+  }
+}

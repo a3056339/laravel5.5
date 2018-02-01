@@ -1,0 +1,113 @@
+{
+  "key": "aliyun_phone",
+  "title": "阿里电话管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/phone",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "手机号码",
+        "key": "phone"
+      },
+      {
+        "title": "状态",
+        "key": "status",
+        "type": "select",
+        "select": "{\"0\":\"启用\",\"-1\":\"禁用\"}"
+      },
+      {
+        "title": "时间",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/phone_save",
+          "cols": [
+            {
+              "input": {
+                "title": "手机号码",
+                "name": "phone",
+                "required":true
+              }
+            },
+            {
+              "radio": {
+                "title": "状态",
+                "name": "status",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "启用",
+                    "value": "0"
+                  },
+                  {
+                    "title": "禁用",
+                    "value": "-1"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/phone_save",
+          "cols": [
+            {
+              "input": {
+                "title": "手机号码",
+                "name": "phone",
+                "required":true
+              }
+            },
+            {
+              "radio": {
+                "title": "状态",
+                "name": "status",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "启用",
+                    "value": "0"
+                  },
+                  {
+                    "title": "禁用",
+                    "value": "-1"
+                  }
+                ]
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

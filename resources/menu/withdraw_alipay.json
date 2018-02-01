@@ -1,0 +1,112 @@
+{
+  "key": "withdraw_alipa",
+  "title": "用户提现申请",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/withdraw",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "提现人uid",
+        "key": "uid"
+      },
+      {
+        "title": "提现账号",
+        "key": "account"
+      },
+      {
+        "title": "提现金额",
+        "key": "amount"
+      },
+      {
+        "title": "状态",
+        "key": "status",
+        "type": "select",
+        "select": "{\"0\":\"待处理\",\"1\":\"待财务处理\",\"-1\":\"驳回\",\"2\":\"提现成功\"}"
+      },
+      {
+        "title": "申请日期",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "处理",
+        "key": "edit",
+        "type": "modal",
+        "condition":"%s ===0  @status",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/withdraw_save",
+          "cols": [
+            {
+              "radio": {
+                "title": "状态",
+                "name": "status",
+                "default": "1",
+                "value": [
+                  {
+                    "title": "同意提现",
+                    "value": "1"
+                  },
+                  {
+                    "title": "驳回",
+                    "value": "-1"
+                  }
+                ]
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "filter": [
+      {
+        "input": {
+          "title": "提现人uid",
+          "name": "uid"
+        }
+      },
+      {
+        "select": {
+          "title": "状态",
+          "name": "status",
+          "default": "all",
+          "value": [
+            {
+              "title": "--选择--",
+              "value": "all"
+            },
+            {
+              "title": "被驳回",
+              "value": "-1"
+            },
+            {
+              "title": "待处理",
+              "value": "0"
+            },
+            {
+              "title": "同意",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      {
+        "rangedate": {
+          "title": "申请日期",
+          "name": "created"
+        }
+      }
+    ]
+  }
+}

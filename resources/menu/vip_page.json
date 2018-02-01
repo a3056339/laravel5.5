@@ -1,0 +1,123 @@
+{
+  "key": "vip_page",
+  "title": "vip主页",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/vip_page",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "标题",
+        "key": "title"
+      },
+      {
+        "title": "说明",
+        "key": "intro"
+      },
+      {
+        "title": "展示图",
+        "key": "img",
+        "type": "image"
+      },
+      {
+        "title": "URl",
+        "key": "url"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/vip_page_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "upload": {
+                "title": "展示图",
+                "name": "img",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "URL",
+                "name": "url",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "说明",
+                "name": "intro",
+                "required":true
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/vip_page_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "upload": {
+                "title": "展示图",
+                "name": "img",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "URL",
+                "name": "url",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "说明",
+                "name": "intro",
+                "required":true
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

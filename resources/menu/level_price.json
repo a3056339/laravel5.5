@@ -1,0 +1,179 @@
+{
+  "key": "level_price",
+  "title": "医生等级价格管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/level_price",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "医生等级",
+        "key": "level_id"
+      },
+      {
+        "title": "文字咨询价格",
+        "key": "words_price"
+      },
+      {
+        "title": "电话咨询价格",
+        "key": "phone_price"
+      },
+      {
+        "title": "年度心灵管家价格",
+        "key": "year_price"
+      },
+      {
+        "title": "年度心灵管家简介",
+        "key": "year_intro"
+      },
+      {
+        "title": "时间",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/level_price_save",
+          "cols": [
+            {
+              "select": {
+                "title": "级别",
+                "name": "level_id",
+                "default": "1",
+                "value": [
+                  {
+                    "title": "普通",
+                    "value": "1"
+                  },
+                  {
+                    "title": "专家",
+                    "value": "2"
+                  },
+                  {
+                    "title": "高级",
+                    "value": "3"
+                  }
+                ]
+              }
+            },
+            {
+              "input": {
+                "title": "电话咨询价格",
+                "name": "phone_price",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "文字咨询价格",
+                "name": "words_price",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "年度心灵管家价格",
+                "name": "year_price",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "年度心灵管家简介",
+                "name": "year_intro"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/level_price_save",
+          "cols": [
+            {
+              "select": {
+                "title": "级别",
+                "name": "level_id",
+                "default": "1",
+                "value": [
+                  {
+                    "title": "普通",
+                    "value": "1"
+                  },
+                  {
+                    "title": "专家",
+                    "value": "2"
+                  },
+                  {
+                    "title": "高级",
+                    "value": "3"
+                  }
+                ]
+              }
+            },
+            {
+              "input": {
+                "title": "电话咨询价格",
+                "name": "phone_price",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "文字咨询价格",
+                "name": "words_price",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "年度心灵管家价格",
+                "name": "year_price",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "年度心灵管家简介",
+                "name": "year_intro"
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/level_price_del"
+        }
+      }
+    ]
+  }
+}

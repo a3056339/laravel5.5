@@ -1,0 +1,219 @@
+{
+  "key": "order_free",
+  "title": "免费订单管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/order_free",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "订单编号",
+        "key": "order_no"
+      },
+      {
+        "title": "订单用户",
+        "key": "buy_user"
+      },
+      {
+        "title": "金额",
+        "key": "amount"
+      },
+      {
+        "title": "订单类型",
+        "key": "type",
+        "type": "select",
+        "select": "{\"0\":\"文字咨询\",\"1\":\"电话咨询\"}"
+      },
+      {
+        "title": "说明",
+        "key": "sub_title"
+      },
+      {
+        "title": "手机类型",
+        "key": "device",
+        "type": "select",
+        "select": "{\"1\":\"iPhone\",\"2\":\"android\",\"3\":\"ipad\"}"
+      },
+      {
+        "title": "状态",
+        "key": "status",
+        "type": "select",
+        "select": "{\"-1\":\"关闭\",\"1\":\"已支付\",\"2\":\"待评价\",\"3\":\"投诉\",\"4\":\"已评价\",\"5\":\"退款\"}"
+      },
+      {
+        "title": "创建时间",
+        "key": "create_at",
+        "type": "datetime"
+      },
+      {
+        "title": "支付时间",
+        "key": "pay_time",
+        "type": "datetime"
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "详情",
+        "key": "edit",
+        "type": "modal",
+        "condition":"%s ===0  @type",
+        "modal": {
+          "before_url": "",
+          "after_url": "",
+          "cols": [
+            {
+              "label": {
+                "title": "订单编号",
+                "name": "order_no"
+              }
+            },
+            {
+              "label": {
+                "title": "发起者",
+                "name": "buy_user"
+              }
+            },
+            {
+              "label": {
+                "title": "老师",
+                "name": "to_user"
+              }
+            },
+            {
+              "label": {
+                "title": "内容",
+                "name": "content"
+              }
+            },
+            {
+              "label": {
+                "title": "回复",
+                "name": "answer"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "filter": [
+      {
+        "input": {
+          "title": "充值用户uid",
+          "name": "from_uid"
+        }
+      },
+      {
+        "input": {
+          "title": "订单号",
+          "name": "order_no"
+        }
+      },
+      {
+        "select": {
+          "title": "订单状态",
+          "name": "status",
+          "default": "1",
+          "value": [
+            {
+              "title": "--选择--",
+              "value": "all"
+            },
+            {
+              "title": "已关闭",
+              "value": "-1"
+            },
+            {
+              "title": "已支付",
+              "value": "1"
+            },
+            {
+              "title": "待评价",
+              "value": "2"
+            },
+            {
+              "title": "投诉",
+              "value": "3"
+            },
+            {
+              "title": "已评价",
+              "value": "4"
+            },
+            {
+              "title": "退款",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      {
+        "select": {
+          "title": "订单类型",
+          "name": "type",
+          "default": "all",
+          "value": [
+            {
+              "title": "--选择--",
+              "value": "all"
+            },
+            {
+              "title": "文字咨询",
+              "value": "0"
+            },
+            {
+              "title": "电话咨询",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      {
+        "select": {
+          "title": "手机类型",
+          "name": "device",
+          "default": "all",
+          "value": [
+            {
+              "title": "--选择--",
+              "value": "all"
+            },
+            {
+              "title": "iphone",
+              "value": "1"
+            },
+            {
+              "title": "android",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      {
+        "input": {
+          "title": "渠道",
+          "name": "channel"
+        }
+      },
+      {
+        "input": {
+          "title": "包名",
+          "name": "app_id"
+        }
+      },
+      {
+        "rangedate": {
+          "title": "注册日期",
+          "name": "created"
+        }
+      },
+      {
+        "rangedate": {
+          "title": "支付日期",
+          "name": "pay_time"
+        }
+      }
+    ]
+  }
+}

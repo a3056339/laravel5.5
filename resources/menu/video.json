@@ -1,0 +1,83 @@
+{
+  "key": "video",
+  "title": "视屏审核",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/video",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "UID",
+        "key": "uid"
+      },
+      {
+        "title": "展示图",
+        "key": "img",
+        "type": "image"
+      },
+      {
+        "title": "时间",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/video_save",
+          "cols": [
+            {
+              "video": {
+                "title": "视屏",
+                "name": "video"
+              }
+            },
+            {
+              "radio": {
+                "title": "审核",
+                "name": "status",
+                "default": "1",
+                "value": [
+                  {
+                    "title": "通过",
+                    "value": "1"
+                  },
+                  {
+                    "title": "驳回",
+                    "value": "-1"
+                  }
+                ]
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "filter": [
+      {
+        "input": {
+          "title": "UID",
+          "name": "uid"
+        }
+      },
+      {
+        "rangedate": {
+          "title": "上传日期",
+          "name": "created"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,475 @@
+{
+  "key": "user",
+  "title": "老师管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/teacher",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "UID",
+        "key": "uid"
+      },
+      {
+        "title": "名字",
+        "key": "name"
+      },
+      {
+        "title": "头像",
+        "key": "avatar",
+        "type": "image"
+      },
+      {
+        "title": "手机号码",
+        "key": "phone"
+      },
+      {
+        "title": "排序",
+        "key": "sort"
+      },
+      {
+        "title": "出生年月",
+        "key": "birthday",
+        "type":"date"
+      },
+      {
+        "title": "级别",
+        "key": "level",
+        "type": "select",
+        "select": "{\"1\":\"普通\",\"2\":\"专家\",\"3\":\"高级\"}"
+      },
+      {
+        "title": "状态",
+        "key": "status",
+        "type": "select",
+        "select": "{\"-1\":\"禁用\",\"0\":\"启用\"}"
+      },
+      {
+        "title": "注册时间",
+        "key": "create_at",
+        "type":"datetime"
+      },
+      {
+        "title": "登录时间",
+        "key": "login_at",
+        "type":"datetime"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "/configs/teacher_before",
+          "after_url": "/configs/teacher_save",
+          "cols": [
+            {
+              "input": {
+                "title": "姓名",
+                "name": "name",
+                "required":true
+              }
+            },
+            {
+              "upload": {
+                "title": "头像",
+                "name": "avatar",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "手机号码",
+                "name": "phone",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "地区",
+                "name": "abode"
+              }
+            },
+            {
+              "date": {
+                "title": "出生年月",
+                "name": "birthday",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "头衔",
+                "name": "title"
+              }
+            },
+            {
+              "input": {
+                "title": "拨打手机",
+                "name": "call_phone",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "自我介绍",
+                "name": "intro"
+              }
+            },
+            {
+              "radio": {
+                "title": "状态",
+                "name": "status",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "有效",
+                    "value": "0"
+                  },
+                  {
+                    "title": "无效",
+                    "value": "-1"
+                  }
+                ]
+              }
+            },
+            {
+              "radio": {
+                "title": "级别",
+                "name": "level",
+                "default": "1",
+                "value": [
+                  {
+                    "title": "普通",
+                    "value": "1"
+                  },
+                  {
+                    "title": "专家",
+                    "value": "2"
+                  },
+                  {
+                    "title": "高级",
+                    "value": "3"
+                  }
+                ]
+              }
+            },
+            {
+              "number": {
+                "title": "排序",
+                "name": "sort"
+              }
+            }
+            ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/teacher_save",
+          "cols": [
+            {
+              "input": {
+                "title": "姓名",
+                "name": "name",
+                "required":true
+              }
+            },
+            {
+              "upload": {
+                "title": "头像",
+                "name": "avatar",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "手机号码",
+                "name": "phone",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "地区",
+                "name": "abode"
+              }
+            },
+            {
+              "date": {
+                "title": "出生年月",
+                "name": "birthday",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "头衔",
+                "name": "title"
+              }
+            },
+            {
+              "input": {
+                "title": "拨打手机",
+                "name": "call_phone",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "自我介绍",
+                "name": "intro"
+              }
+            },
+            {
+              "radio": {
+                "title": "状态",
+                "name": "status",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "有效",
+                    "value": "0"
+                  },
+                  {
+                    "title": "无效",
+                    "value": "-1"
+                  }
+                ]
+              }
+            },
+            {
+              "radio": {
+                "title": "级别",
+                "name": "level",
+                "default": "1",
+                "value": [
+                  {
+                    "title": "普通",
+                    "value": "1"
+                  },
+                  {
+                    "title": "专家",
+                    "value": "2"
+                  },
+                  {
+                    "title": "高级",
+                    "value": "3"
+                  }
+                ]
+              }
+            },
+            {
+              "number": {
+                "title": "排序",
+                "name": "sort"
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "设置",
+        "key": "set",
+        "type": "modal",
+        "modal": {
+          "before_url": "/configs/teacher_before",
+          "after_url": "/configs/teacher_save",
+          "cols": [
+            {
+              "number": {
+                "title": "电话价格",
+                "name": "price"
+              }
+            },{
+              "number": {
+                "title": "年度管家",
+                "name": "year_price"
+              }
+            },
+            {
+              "number": {
+                "title": "工作年限",
+                "name": "work_year"
+              }
+            },
+            {
+              "number": {
+                "title": "咨询人数",
+                "name": "advisory"
+              }
+            },
+            {
+              "number": {
+                "title": "收藏数",
+                "name": "collect_num"
+              }
+            },
+            {
+              "number": {
+                "title": "评论数",
+                "name": "comment_num"
+              }
+            },
+            {
+              "checkbox": {
+                "title": "首页标签",
+                "name": "tags_index"
+              }
+            },
+            {
+              "checkbox": {
+                "title": "标签",
+                "name": "tags"
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            },
+            {
+              "checkbox": {
+                "title": "服务时间",
+                "name": "service",
+                "default": "周一",
+                "value": [
+                  {
+                    "title": "周一",
+                    "value": "周一"
+                  },
+                  {
+                    "title": "周二",
+                    "value": "周二"
+                  },
+                  {
+                    "title": "周三",
+                    "value": "周三"
+                  },
+                  {
+                    "title": "周四",
+                    "value": "周四"
+                  },
+                  {
+                    "title": "周五",
+                    "value": "周五"
+                  },
+                  {
+                    "title": "周六",
+                    "value": "周六"
+                  },
+                  {
+                    "title": "周日",
+                    "value": "周日"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+
+      },
+      {
+        "title": "视屏管理",
+        "key": "video",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/videos_save",
+          "cols": [
+            {
+              "upload": {
+                "title": "封面图片",
+                "name": "img",
+                "required":true
+              }
+            },
+            {
+              "upload": {
+                "title": "视屏",
+                "name": "video",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "时长",
+                "name": "length",
+                "required":true
+              }
+            },
+            {
+              "hidden": {
+                "name": "uid"
+              }
+            },
+            {
+              "hidden": {
+                "name": "video_id"
+              }
+            }
+          ]
+        }
+
+      }
+    ],
+    "filter":[
+      {
+        "input":{
+          "title":"UID",
+          "name":"uid"
+        }
+      },{
+        "select":{
+          "title":"状态",
+          "name":"status",
+          "default": "all",
+          "value": [
+            {
+              "title": "选择",
+              "value": "all"
+            },
+            {
+              "title": "有效",
+              "value": "0"
+            },
+            {
+              "title": "无效",
+              "value": "-1"
+            }
+          ]
+        }
+
+      },{
+        "rangedate":{
+          "title":"注册日期",
+          "name":"created"
+        }
+      },{
+        "rangedate":{
+          "title":"登录日期",
+          "name":"logind"
+        }
+      }
+    ]
+  }
+}

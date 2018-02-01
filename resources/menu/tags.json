@@ -1,0 +1,139 @@
+{
+  "key": "tags",
+  "title": "标签管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/tags",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "标题",
+        "key": "title"
+      },
+      {
+        "title": "热门搜索词",
+        "key": "search",
+        "type": "select",
+        "select": "{\"0\":\"否\",\"1\":\"是\"}"
+      },
+      {
+        "title": "所属类型",
+        "key": "type_name"
+      },
+      {
+        "title": "时间",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "/configs/tag_before",
+          "after_url": "/configs/tags_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "select": {
+                "title": "所属分类",
+                "name": "p_id",
+                "required":true
+              }
+            },
+            {
+              "select": {
+                "title": "热门搜索词",
+                "name": "search",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "是",
+                    "value": "1"
+                  },
+                  {
+                    "title": "否",
+                    "value": "0"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "/configs/tag_before",
+          "after_url": "/configs/tags_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "select": {
+                "title": "所属分类",
+                "name": "p_id",
+                "required":true
+              }
+            },
+            {
+              "select": {
+                "title": "热门搜索词",
+                "name": "search",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "是",
+                    "value": "1"
+                  },
+                  {
+                    "title": "否",
+                    "value": "0"
+                  }
+                ]
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/tags_del"
+        }
+      }
+    ]
+  }
+}

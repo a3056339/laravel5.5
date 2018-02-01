@@ -1,0 +1,134 @@
+{
+  "key": "member_service",
+  "title": "会员权益",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/member_service",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "标题",
+        "key": "title"
+      },
+      {
+        "title": "展示图",
+        "key": "icon",
+        "type": "image"
+      },
+      {
+        "title": "价格",
+        "key": "amount"
+      },
+      {
+        "title": "URL",
+        "key": "url"
+      },
+      {
+        "title": "创建时间",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/member_service_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "upload": {
+                "title": "展示图",
+                "name": "icon",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "价格",
+                "name": "amount",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "URL",
+                "name": "url"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/member_service_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "upload": {
+                "title": "展示图",
+                "name": "icon",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "价格",
+                "name": "amount",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "URL",
+                "name": "url"
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/member_service_del"
+        }
+      }
+    ]
+  }
+}

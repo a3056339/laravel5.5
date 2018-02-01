@@ -1,0 +1,189 @@
+{
+  "key": "vip",
+  "title": "vip价格",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/vip",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "标题",
+        "key": "title"
+      },
+      {
+        "title": "原价",
+        "key": "t_price"
+      },
+      {
+        "title": "价格",
+        "key": "price"
+      },
+      {
+        "title": "快问数",
+        "key": "w_num"
+      },
+      {
+        "title": "电话数",
+        "key": "p_num"
+      },
+      {
+        "title": "时长",
+        "key": "length"
+      },
+      {
+        "title": "折扣",
+        "key": "sale"
+      },
+      {
+        "title": "时间",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/vip_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "原价",
+                "name": "t_price",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "现价",
+                "name": "price",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "快问次数",
+                "name": "w_num",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "电话次数",
+                "name": "p_num",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "通话时长",
+                "name": "length",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "折扣",
+                "name": "sale",
+                "required":true
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/vip_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "原价",
+                "name": "t_price",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "现价",
+                "name": "price",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "快问次数",
+                "name": "w_num",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "电话次数",
+                "name": "p_num",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "通话时长",
+                "name": "length",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "折扣",
+                "name": "sale",
+                "required":true
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/vip_del"
+        }
+      }
+    ]
+  }
+}

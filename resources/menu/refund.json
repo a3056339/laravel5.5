@@ -1,0 +1,93 @@
+{
+  "key": "refund",
+  "title": "退款管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/refund",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "编号",
+        "key": "id"
+      },
+      {
+        "title": "订单编号",
+        "key": "order_no"
+      },
+      {
+        "title": "退款类型",
+        "key": "type",
+        "type": "select",
+        "select": "{\"0\":\"部分退款\",\"1\":\"全额退款\"}"
+      },
+      {
+        "title": "订单金额",
+        "key": "order_amount"
+      },
+      {
+        "title": "退款金额",
+        "key": "amount"
+      },
+      {
+        "title": "状态",
+        "key": "status",
+        "type": "select",
+        "select": "{\"0\":\"待处理\",\"1\":\"退款\"}"
+      },
+      {
+        "title": "退款时间",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "退款",
+        "type": "confirm",
+        "key": "save",
+        "condition":"%s ===0  @status",
+        "confirm": {
+          "url": "/configs/refund_save"
+        }
+      }
+    ],
+    "filter": [
+      {
+        "input": {
+          "title": "订单编号",
+          "name": "order_no"
+        }
+      },
+      {
+        "select": {
+          "title": "状态",
+          "name": "status",
+          "default": "all",
+          "value": [
+            {
+              "title": "--选择--",
+              "value": "all"
+            },
+            {
+              "title": "待处理",
+              "value": "0"
+            },
+            {
+              "title": "已处理",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      {
+        "rangedate": {
+          "title": "投诉日期",
+          "name": "created"
+        }
+      }
+    ]
+  }
+}

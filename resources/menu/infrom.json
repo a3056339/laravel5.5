@@ -1,0 +1,213 @@
+{
+  "key": "infrom",
+  "title": "投诉管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/infrom",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "编号",
+        "key": "id"
+      },
+      {
+        "title": "举报人",
+        "key": "from_user"
+      },
+      {
+        "title": "举报对象",
+        "key": "to_user"
+      },
+      {
+        "title": "举报原因",
+        "key": "type",
+        "type": "select",
+        "select": "{\"0\":\"没人接电话\",\"1\":\"电话被挂断\",\"2\":\"咨询回答不满意\",\"3\":\"老师回答不认真\",\"4\":\"其他原因\"}"
+      },
+      {
+        "title": "订单编号",
+        "key": "order_no"
+      },
+      {
+        "title": "状态",
+        "key": "status",
+        "type": "select",
+        "select": "{\"0\":\"待处理\",\"1\":\"不退款关闭\",\"2\":\"退款关闭\",\"3\":\"部分退款\"}"
+      },
+      {
+        "title": "投诉日期",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "处理",
+        "key": "edit",
+        "type": "modal",
+        "condition": "%s ===0  @status",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/infrom_save",
+          "cols": [
+            {
+              "label": {
+                "title": "举报人",
+                "name": "from_user"
+              }
+            },
+            {
+              "label": {
+                "title": "被举报人",
+                "name": "to_user"
+              }
+            },
+            {
+              "label": {
+                "title": "订单编号",
+                "name": "order_no"
+              }
+            },
+            {
+              "label": {
+                "title": "举报原因",
+                "name": "type_reason"
+              }
+            },
+            {
+              "select": {
+                "title": "处理类型",
+                "name": "status",
+                "default": "1",
+                "value": [
+                  {
+                    "title": "不退款关闭",
+                    "value": "1"
+                  },
+                  {
+                    "title": "退款关闭",
+                    "value": "2"
+                  },
+                  {
+                    "title": "部分退款",
+                    "value": "3"
+                  }
+                ]
+              }
+            },
+            {
+              "number": {
+                "title": "部分退款金额",
+                "name": "amount"
+              }
+            },
+            {
+              "input": {
+                "title": "备注",
+                "name": "remark"
+              }
+            },
+            {
+              "image": {
+                "title": "展示图",
+                "name": "path",
+                "width": 100,
+                "height":100
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "filter": [
+      {
+        "input": {
+          "title": "举报人uid",
+          "name": "from_uid"
+        }
+      },
+      {
+        "input": {
+          "title": "被举报人uid",
+          "name": "to_uid"
+        }
+      },
+      {
+        "select": {
+          "title": "状态",
+          "name": "status",
+          "default": "all",
+          "value": [
+            {
+              "title": "--选择--",
+              "value": "all"
+            },
+            {
+              "title": "待处理",
+              "value": "0"
+            },
+            {
+              "title": "不退款关闭",
+              "value": "1"
+            },
+            {
+              "title": "退款关闭",
+              "value": "2"
+            },
+            {
+              "title": "部分退款",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      {
+        "select": {
+          "title": "举报类型",
+          "name": "type",
+          "default": "all",
+          "value": [
+            {
+              "title": "--选择--",
+              "value": "all"
+            },
+            {
+              "title": "没人接电话",
+              "value": "0"
+            },
+            {
+              "title": "电话被挂断",
+              "value": "1"
+            },
+            {
+              "title": "咨询回答不满意",
+              "value": "2"
+            },
+            {
+              "title": "老师回答不认真",
+              "value": "3"
+            },
+            {
+              "title": "其他原因",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      {
+        "rangedate": {
+          "title": "投诉日期",
+          "name": "created"
+        }
+      }
+    ]
+  }
+}

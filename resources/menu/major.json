@@ -1,0 +1,60 @@
+{
+  "key": "major",
+  "title": "心里管家",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/major",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "FROM_UID/名字",
+        "key": "from_uid"
+      },
+      {
+        "title": "TO_UID/名字",
+        "key": "to_uid"
+      },
+      {
+        "title": "开始时间",
+        "key": "start_at",
+        "type": "datetime"
+      },
+      {
+        "title": "结束时间",
+        "key": "end_at",
+        "type": "datetime"
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/major_del"
+        }
+      }
+    ],
+    "filter": [
+      {
+        "input": {
+          "title": "FROM_UID",
+          "name": "from_uid"
+        }
+      },
+      {
+        "input": {
+          "title": "TO__UID",
+          "name": "to_uid"
+        }
+      }
+    ]
+  }
+}

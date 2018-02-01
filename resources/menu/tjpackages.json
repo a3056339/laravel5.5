@@ -1,0 +1,148 @@
+{
+  "key": "tjpackages",
+  "title": "推荐套餐管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/tjpackages",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "名字",
+        "key": "title"
+      },
+      {
+        "title": "价格",
+        "key": "price"
+      },
+      {
+        "title": "图片",
+        "key": "img",
+        "type": "image"
+      },
+      {
+        "title": "创建时间",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "/configs/tjpackage_before",
+          "after_url": "/configs/tjpackage_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "说明",
+                "type":"textarea",
+                "name": "intro",
+                "required":true
+              }
+            },
+            {
+              "checkbox": {
+                "title": "标签",
+                "name": "tags",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "价格",
+                "name": "price",
+                "required":true
+              }
+            },
+            {
+               "upload": {
+                 "title": "图片",
+                 "name": "img",
+                 "required":true
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/tjpackage_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "说明",
+                "type":"textarea",
+                "name": "intro",
+                "required":true
+              }
+            },
+            {
+              "checkbox": {
+                "title": "标签",
+                "name": "tags",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "价格",
+                "name": "price",
+                "required":true
+              }
+            },
+            {
+              "upload": {
+                  "title": "图片",
+                  "name": "img",
+                "required":true
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/tjpackage_del"
+        }
+      }
+    ]
+  }
+}

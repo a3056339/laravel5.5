@@ -1,0 +1,87 @@
+{
+  "key": "withdraw",
+  "title": "提现处理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/withdraws",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "提现人uid",
+        "key": "uid"
+      },
+      {
+        "title": "提现账号",
+        "key": "account"
+      },
+      {
+        "title": "提现批号",
+        "key": "batch_no"
+      },
+      {
+        "title": "提现金额",
+        "key": "amount"
+      },
+      {
+        "title": "状态",
+        "key": "status",
+        "type": "select",
+        "select": "{\"1\":\"待处理\",\"2\":\"提现成功\"}"
+      },
+      {
+        "title": "申请日期",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "同意提现",
+        "type": "confirm",
+        "key": "save",
+        "condition":"%s ===1  @status",
+        "confirm": {
+          "url": "/configs/withdraws_save"
+        }
+      }
+    ],
+    "filter": [
+      {
+        "input": {
+          "title": "提现人uid",
+          "name": "uid"
+        }
+      },
+      {
+        "select": {
+          "title": "状态",
+          "name": "status",
+          "default": "all",
+          "value": [
+            {
+              "title": "--选择--",
+              "value": "all"
+            },
+            {
+              "title": "待处理",
+              "value": "1"
+            },
+            {
+              "title": "同意",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      {
+        "rangedate": {
+          "title": "申请日期",
+          "name": "created"
+        }
+      }
+    ]
+  }
+}

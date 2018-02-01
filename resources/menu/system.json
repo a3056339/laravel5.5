@@ -1,0 +1,134 @@
+{
+  "key": "system",
+  "title": "包名管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/system",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "包名",
+        "key": "title"
+      },
+      {
+        "title": "说明",
+        "key": "intro"
+      },
+      {
+        "title": "app_key",
+        "key": "app_key"
+      },
+      {
+        "title": "master_secret",
+        "key": "master_secret"
+      },
+      {
+        "title": "时间",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/system_save",
+          "cols": [
+            {
+              "input": {
+                "title": "包名",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "说明",
+                "name": "intro"
+              }
+            },
+            {
+              "input": {
+                "title": "app_key",
+                "name": "app_key",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "master_secret",
+                "name": "master_secret",
+                "required":true
+              }
+            }
+
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/system_save",
+          "cols": [
+            {
+              "input": {
+                "title": "包名",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "说明",
+                "name": "intro"
+              }
+            },
+            {
+              "input": {
+                "title": "app_key",
+                "name": "app_key",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "master_secret",
+                "name": "master_secret",
+                "required":true
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/system_del"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "key": "comment",
+  "title": "评论管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/comment",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "编号",
+        "key": "id"
+      },
+      {
+        "title": "评论人",
+        "key": "from_user"
+      },
+      {
+        "title": "评论对象",
+        "key": "to_user"
+      },
+      {
+        "title": "分数",
+        "key": "fraction"
+      },
+      {
+        "title": "订单编号",
+        "key": "order_no"
+      },
+      {
+        "title": "内容",
+        "key": "intro"
+      },
+      {
+        "title": "评论日期",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "置顶",
+        "type": "confirm",
+        "key": "edit",
+        "condition": "%s ===0  @is_top",
+        "confirm": {
+          "url": "/configs/comment_save"
+        }
+      },
+      {
+        "title": "取消置顶",
+        "type": "confirm",
+        "key": "edit",
+        "condition": "%s ===1  @is_top",
+        "confirm": {
+          "url": "/configs/comment_save"
+        }
+      },
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/comment_del"
+        }
+      }
+    ],
+    "filter": [
+      {
+        "input": {
+          "title": "评论人uid",
+          "name": "from_uid"
+        }
+      },
+      {
+        "input": {
+          "title": "被评论uid",
+          "name": "to_uid"
+        }
+      },
+      {
+        "select": {
+          "title": "分数",
+          "name": "fraction",
+          "default": "all",
+          "value": [
+            {
+              "title": "--选择--",
+              "value": "all"
+            },
+            {
+              "title": "5星好评",
+              "value": "5"
+            },
+            {
+              "title": "4星好评",
+              "value": "4"
+            },
+            {
+              "title": "3星好评",
+              "value": "3"
+            },
+            {
+              "title": "2星好评",
+              "value": "2"
+            },
+            {
+              "title": "1星好评",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      {
+        "rangedate": {
+          "title": "评论日期",
+          "name": "created"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+[
+  {
+    "key": "configs",
+    "title": "配置管理",
+    "children": true,
+    "type": "menu",
+    "path": [
+      "banner",
+      "tags",
+      "tags_type",
+      "startad",
+      "tjpackages",
+      "aliyun_phone",
+      "sms_code",
+      "level_price",
+      "notice",
+      "system",
+      "system_pay"
+    ]
+  },
+  {
+    "key": "vip",
+    "title": "会员服务",
+    "children": true,
+    "type": "menu",
+    "path": [
+      "member_service",
+      "vip",
+      "vip_page"
+    ]
+  },
+  {
+    "key": "user",
+    "title": "用户管理",
+    "children": true,
+    "type": "menu",
+    "path": [
+      "teacher",
+      "student",
+      "major",
+      "video",
+      "comment"
+    ]
+  },
+  {
+    "key": "new",
+    "title": "资讯管理",
+    "children": true,
+    "type": "menu",
+    "path": [
+      "news_type",
+      "news"
+    ]
+  },
+  {
+    "key": "finance",
+    "title": "财务管理",
+    "children": true,
+    "type": "menu",
+    "path": [
+      "order",
+      "order_free",
+      "infrom",
+      "withdraw_alipay",
+      "withdraw",
+      "refund"
+    ]
+  }
+]

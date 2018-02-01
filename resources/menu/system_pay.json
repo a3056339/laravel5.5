@@ -1,0 +1,156 @@
+{
+  "key": "system_pay",
+  "title": "支付开关",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/system_pay",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "app_id",
+        "key": "app_id"
+      },
+      {
+        "title": "渠道",
+        "key": "channel"
+      },
+      {
+        "title": "版本",
+        "key": "version"
+      },
+      {
+        "title": "开关",
+        "key": "switch",
+        "type": "select",
+        "select": "{\"0\":\"关闭\",\"1\":\"开启\"}"
+      },
+      {
+        "title": "时间",
+        "key": "create_at",
+        "type": "datetime"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/system_pay_save",
+          "cols": [
+            {
+              "input": {
+                "title": "app_id",
+                "name": "app_id",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "渠道",
+                "name": "channel"
+              }
+            },
+            {
+              "input": {
+                "title": "版本",
+                "name": "version",
+                "required":true
+              }
+            },
+            {
+              "radio": {
+                "title": "开关",
+                "name": "switch",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "关闭",
+                    "value": "0"
+                  },
+                  {
+                    "title": "开启",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/system_pay_save",
+          "cols": [
+            {
+              "input": {
+                "title": "app_id",
+                "name": "app_id",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "渠道",
+                "name": "channel"
+              }
+            },
+            {
+              "input": {
+                "title": "版本",
+                "name": "version",
+                "required":true
+              }
+            },
+            {
+              "radio": {
+                "title": "开关",
+                "name": "switch",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "关闭",
+                    "value": "0"
+                  },
+                  {
+                    "title": "开启",
+                    "value": "1"
+                  }
+                ]
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/system_pay_del"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "key": "banner",
+  "title": "Banner设置",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/banner",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "标题",
+        "key": "title"
+      },
+      {
+        "title": "类型",
+        "key": "type",
+        "type": "select",
+        "select": "{\"0\":\"老师\",\"1\":\"H5\",\"2\":\"会员\"}"
+      },
+      {
+        "title": "展示图",
+        "key": "img",
+        "type": "image"
+      },
+      {
+        "title": "排序",
+        "key": "sort"
+      },
+      {
+        "title": "状态",
+        "key": "status",
+        "type": "select",
+        "select": "{\"-1\":\"无效\",\"1\":\"有效\"}"
+      }
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/banner_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "select": {
+                "title": "类型",
+                "name": "type",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "H5",
+                    "value": "1"
+                  },
+                  {
+                    "title": "老师",
+                    "value": "0"
+                  },
+                  {
+                    "title": "会员",
+                    "value": "2"
+                  }
+                ]
+              }
+            },
+            {
+              "input": {
+                "title": "链接",
+                "name": "url"
+              }
+            },
+            {
+              "number": {
+                "title": "排序",
+                "name": "sort"
+              }
+            },
+            {
+              "upload": {
+                "title": "展示图",
+                "name": "img",
+                "required":true
+              }
+            },
+            {
+              "select": {
+                "title": "状态",
+                "name": "status",
+                "default": "1",
+                "value": [
+                  {
+                    "title": "有效",
+                    "value": "1"
+                  },
+                  {
+                    "title": "无效",
+                    "value": "-1"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "",
+          "after_url": "/configs/banner_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "select": {
+                "title": "类型",
+                "name": "type",
+                "default": "0",
+                "value": [
+                  {
+                    "title": "H5",
+                    "value": "1"
+                  },
+                  {
+                    "title": "老师",
+                    "value": "0"
+                  },
+                  {
+                    "title": "会员",
+                    "value": "2"
+                  }
+                ]
+              }
+            },
+            {
+              "input": {
+                "title": "链接",
+                "name": "url"
+              }
+            },
+            {
+              "number": {
+                "title": "排序",
+                "name": "sort"
+              }
+            },
+            {
+              "upload": {
+                "title": "展示图",
+                "name": "img",
+                "required":true
+              }
+            },
+            {
+              "select": {
+                "title": "状态",
+                "name": "status",
+                "default": "1",
+                "value": [
+                  {
+                    "title": "有效",
+                    "value": "1"
+                  },
+                  {
+                    "title": "无效",
+                    "value": "-1"
+                  }
+                ]
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/banner_del"
+        }
+      }
+    ]
+  }
+}

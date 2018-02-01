@@ -1,0 +1,245 @@
+{
+  "key": "news",
+  "title": "资讯管理",
+  "children": false,
+  "type": "table",
+  "icon": "",
+  "table": {
+    "remote": true,
+    "source": "/configs/news",
+    "pk": "id",
+    "cols": [
+      {
+        "title": "ID",
+        "key": "id"
+      },
+      {
+        "title": "标题",
+        "key": "title"
+      },
+      {
+        "title": "所属",
+        "key": "type_name"
+      },
+      {
+        "title": "类型",
+        "key": "type",
+        "type": "select",
+        "select": "{\"0\":\"新闻\",\"1\":\"视频\"}"
+      },
+      {
+        "title": "展示图",
+        "key": "path",
+        "type": "image"
+      },
+      {
+        "title": "排序",
+        "key": "top"
+      },
+      {
+        "title": "查看",
+        "key": "view_num"
+      },
+      {
+        "title": "时间",
+        "key": "create_at",
+        "type":"datetime"
+      }
+
+    ],
+    "action": [
+      {
+        "title": "新增",
+        "key": "add",
+        "icon": "plus",
+        "type": "modal",
+        "modal": {
+          "before_url": "/configs/tags_before",
+          "after_url": "/configs/news_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "简介",
+                "name": "intro",
+                "required":true
+              }
+            },
+            {
+              "radio": {
+                "title": "类型",
+                "name": "type",
+                "default": "0",
+                "required":true,
+                "value": [
+                  {
+                    "title": "视频",
+                    "value": "1"
+                  },
+                  {
+                    "title": "新闻",
+                    "value": "0"
+                  }
+                ]
+              }
+            },
+            {
+              "upload": {
+                "title": "封面",
+                "name": "path",
+                "required":true
+              }
+            },
+            {
+              "upload": {
+                "title": "视屏",
+                "name": "video"
+              }
+            },
+            {
+              "number": {
+                "title": "时长",
+                "name": "length"
+              }
+            },
+            {
+              "select": {
+                "title": "所属标签",
+                "name": "type_id",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "内容",
+                "type":"editor",
+                "name": "content"
+              }
+            },
+            {
+              "number": {
+                "title": "推荐",
+                "name": "sort"
+              }
+            },
+            {
+              "number": {
+                "title": "查看数",
+                "name": "view_num"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "cols_action": [
+      {
+        "title": "修改",
+        "key": "edit",
+        "type": "modal",
+        "modal": {
+          "before_url": "/configs/tags_before",
+          "after_url": "/configs/news_save",
+          "cols": [
+            {
+              "input": {
+                "title": "标题",
+                "name": "title",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "简介",
+                "name": "intro",
+                "required":true
+              }
+            },
+            {
+              "radio": {
+                "title": "类型",
+                "name": "type",
+                "default": "0",
+                "required":true,
+                "value": [
+                  {
+                    "title": "视频",
+                    "value": "1"
+                  },
+                  {
+                    "title": "新闻",
+                    "value": "0"
+                  }
+                ]
+              }
+            },
+            {
+              "upload": {
+                "title": "封面",
+                "name": "path",
+                "required":true
+              }
+            },
+            {
+              "upload": {
+                "title": "视屏",
+                "name": "video"
+              }
+            },
+            {
+              "number": {
+                "title": "时长",
+                "name": "length"
+              }
+            },
+            {
+              "select": {
+                "title": "所属标签",
+                "name": "type_id",
+                "required":true
+              }
+            },
+            {
+              "input": {
+                "title": "内容",
+                "type":"editor",
+                "name": "content",
+                "required":true
+              }
+            },
+            {
+              "number": {
+                "title": "推荐",
+                "name": "sort"
+              }
+            },
+            {
+              "number": {
+                "title": "查看数",
+                "name": "view_num"
+              }
+            },
+            {
+              "hidden": {
+                "name": "id"
+              }
+            }
+          ]
+        }
+      }, {
+        "title": "删除",
+        "type": "confirm",
+        "key": "delete",
+        "confirm": {
+          "url": "/configs/news_del"
+        }
+      }
+    ]
+  }
+}
