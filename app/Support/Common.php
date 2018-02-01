@@ -254,7 +254,7 @@ class Common
             'pic' => curl_file_create(realpath($file['tmp_name']), $file['type'], $file['name'])
         );
 
-        $url = env("PIC_URL", 'https://file.xiake99.com/upload');
+        $url = env("PIC_URL", 'http://aliyun.com/upload');
         $header = ['channel' => env('FILE_CHANNEL', "")];
 
         $result = self::curlRequest($url, $data, $header);
